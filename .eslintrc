@@ -3,6 +3,7 @@
   "extends": "airbnb",
   "rules": {
     "max-len": [1, 120, 2, { "ignoreComments": true}],
-    "react/jsx-filename-extension": 0
+    "react/jsx-filename-extension": 0,
+    "linebreak-style": "off"
   }
 }

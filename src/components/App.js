@@ -4,6 +4,8 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import Container from './container/Container';
 import Shots from './shots/Shots';
 
+import './styles.css';
+
 const App = () => (
   <Router history={browserHistory}>
     <Route path="/" component={Container}>

@@ -1,0 +1,51 @@
+.container {
+  background-color: #fff;
+  display: inline-block;
+  padding: 0.6em;
+  margin: 1em;
+  border-radius: 4px;
+  width: 17em;
+  height: 14em;
+  cursor: pointer;
+}
+
+.container > img {
+  width: 100%;
+}
+
+.container span {
+  display: inline;
+  font-size: 11px;
+  line-height: 1;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  padding: 0 1.5em;
+}
+
+.left {
+  float: left;
+}
+
+.left span {
+  color: #9e9e9e;
+}
+
+.right {
+  float: right;
+}
+
+.right span {
+  color: #aaa;
+}
+
+.views {
+  background-image: url('../../assets/images/view.svg');
+}
+
+.likes {
+  background-image: url('../../assets/images/like.svg');
+}
+
+.calendar {
+  background-image: url('../../assets/images/calendar.svg');
+}

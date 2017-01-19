@@ -19,7 +19,17 @@ class Shots extends Component {
   render() {
     return (
       <div>
-        { this.state.shots.map(shot => <Shot key={shot.id} image={shot.images.normal} />)}
+        { this.state.shots.map(shot =>
+          <Shot
+            key={shot.id}
+            image={shot.images.normal}
+            date={shot.created_at}
+            title={shot.title}
+            description={shot.description}
+            viewsCount={shot.views_count}
+            likesCount={shot.likes_count}
+          />)
+        }
       </div>
     );
   }

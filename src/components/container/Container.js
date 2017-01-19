@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router';
 
 import logo from '../../assets/images/dribble-logo.png';
-import './styles.scss';
+import styles from './styles.scss';
 
 const Container = ({ children }) => (
   <div>
-    <header>
+    <header className={styles.header}>
       <Link to="/"><img src={logo} alt="Logo" /></Link>
     </header>
-    <main>
+    <main className={styles.main}>
       {children}
     </main>
   </div>

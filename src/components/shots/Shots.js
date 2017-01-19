@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import Shot from '../shot/Shot';
 import getShots from '../../services/shots';
 
 class Shots extends Component {
@@ -18,7 +19,7 @@ class Shots extends Component {
   render() {
     return (
       <div>
-        { this.state.shots.map(shot => <img alt="Shot" src={shot.images.normal} />)}
+        { this.state.shots.map(shot => <Shot key={shot.id} image={shot.images.normal} />)}
       </div>
     );
   }

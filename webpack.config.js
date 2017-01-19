@@ -26,6 +26,18 @@ module.exports = {
           presets: ['react', 'es2015'],
         },
       },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader',
+      },
+      {
+        test: /\.scss$/,
+        loader: 'style!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+      },
+      {
+        test: /.(png|woff(2)?|eot|otf|ttf|svg)(\?[a-z0-9=\.]+)?$/,
+        loader: 'url-loader?limit=100000',
+      },
     ],
   },
   plugins: [HTMLWebpackPluginConfig],

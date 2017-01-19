@@ -1,4 +1,5 @@
 .container {
+  position: relative;
   background-color: #fff;
   display: inline-block;
   padding: 0.6em;
@@ -7,10 +8,6 @@
   width: 17em;
   height: 14em;
   cursor: pointer;
-}
-
-.container > img {
-  width: 100%;
 }
 
 .container span {
@@ -22,19 +19,17 @@
   padding: 0 1.5em;
 }
 
-.left {
-  float: left;
+.content > img {
+  width: 100%;
 }
 
-.left span {
-  color: #9e9e9e;
+.tools {
+  position: absolute;
+  bottom: 0.4em;
+  left: 3em;
 }
 
-.right {
-  float: right;
-}
-
-.right span {
+.tools span {
   color: #aaa;
 }
 

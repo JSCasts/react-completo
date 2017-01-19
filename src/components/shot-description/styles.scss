@@ -1,0 +1,18 @@
+.container {
+  background: rgba(255,255,255,0.95);
+  position: absolute;
+  font-size: 13px;
+  width: 80%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  padding: 2em;
+}
+
+.container > h4 {
+  color: #444;
+}
+
+.container > p {
+  color: #888;
+}

@@ -1,27 +1,58 @@
-import React from 'react';
+import React, { Component } from 'react';
 
+import ShotDescription from '../shot-description/ShotDescription';
+import parseDate from '../../services/date';
 import styles from './styles.scss';
 
-const Shot = ({ image, date, likesCount, viewsCount }) => (
-  <div className={styles.container}>
-    <img alt="Shot" src={image} />
-    <div className={styles.left}>
-      <span className={styles.calendar}>{new Date(date).toISOString().split('T')[0]}</span>
-    </div>
-    <div className={styles.right}>
-      <span className={styles.views}>{viewsCount}</span>
-      <span className={styles.likes}>{likesCount}</span>
-    </div>
-  </div>
-);
+class Shot extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showDescription: false,
+    };
+
+    this.toggle = this.toggle.bind(this);
+  }
+
+  toggle() {
+    this.setState({ showDescription: !this.state.showDescription });
+  }
+
+  render() {
+    const { image, date, title, description, likesCount, viewsCount } = this.props;
+
+    return (
+      <div onMouseEnter={this.toggle} onMouseLeave={this.toggle} className={styles.container}>
+        <div className={styles.content}>
+          <img alt="Shot" src={image} />
+          <ShotDescription
+            showDescription={this.state.showDescription}
+            description={description}
+            title={title}
+          />
+        </div>
+        <div className={styles.tools}>
+          <span className={styles.calendar}>{parseDate(date)}</span>
+          <span className={styles.views}>{viewsCount}</span>
+          <span className={styles.likes}>{likesCount}</span>
+        </div>
+      </div>
+    );
+  }
+}
+
+Shot.defaultProps = {
+  description: '',
+};
 
 Shot.propTypes = {
   image: React.PropTypes.string.isRequired,
   viewsCount: React.PropTypes.number.isRequired,
   likesCount: React.PropTypes.number.isRequired,
   date: React.PropTypes.string.isRequired,
-  /*description: React.PropTypes.string.isRequired,*/
-  /*title: React.PropTypes.string.isRequired,*/
+  title: React.PropTypes.string.isRequired,
+  description: React.PropTypes.string,
 };
 
 export default Shot;

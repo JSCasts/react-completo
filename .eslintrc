@@ -2,8 +2,8 @@
   "parser": "babel-eslint",
   "extends": "airbnb",
   "rules": {
-    "max-len": [1, 120, 2, { "ignoreComments": true}],
     "react/jsx-filename-extension": 0,
-    "linebreak-style": "off"
+    "linebreak-style": "off",
+    "class-methods-use-this": "off"
   }
 }

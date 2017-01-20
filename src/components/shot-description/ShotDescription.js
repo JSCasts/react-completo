@@ -1,34 +1,32 @@
-/* eslint-disable react/no-danger */
 import React from 'react';
+import { Link } from 'react-router';
 
-import insertHtml from '../../services/insertHtml';
+import InsertHtml from '../insert-html/InsertHtml';
 import styles from './styles.scss';
 
-const MAX_LEN = 250;
-
-const parseDescription = (description) => {
-  if (description && description.length > MAX_LEN) {
-    return insertHtml(`${description.substring(0, MAX_LEN)}...`);
-  }
-  return insertHtml(description);
-};
-
-const ShotDescription = ({ showDescription, description, title }) => {
+const ShotDescription = ({ id, showDescription, description, title }) => {
   if (showDescription) {
     return (
-      <div className={styles.container}>
-        <h4>{title}</h4>
-        <p dangerouslySetInnerHTML={parseDescription(description)} />
-      </div>
+      <Link to={`/shots/${id}`}>
+        <div className={styles.container}>
+          <h4>{title}</h4>
+          <p><InsertHtml maxLength={240} text={description} /></p>
+        </div>
+      </Link>
     );
   }
   return null;
 };
 
+ShotDescription.defaultProps = {
+  description: '',
+};
+
 ShotDescription.propTypes = {
+  id: React.PropTypes.number.isRequired,
   showDescription: React.PropTypes.bool.isRequired,
   title: React.PropTypes.string.isRequired,
-  description: React.PropTypes.string.isRequired,
+  description: React.PropTypes.string,
 };
 
 export default ShotDescription;

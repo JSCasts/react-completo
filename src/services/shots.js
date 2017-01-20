@@ -9,3 +9,11 @@ export default function getShots() {
     },
   });
 }
+
+export function getShotById(id) {
+  return axios.get(`https://api.dribbble.com/v1/shots/${id}`, {
+    params: {
+      access_token: ACCESS_TOKEN,
+    },
+  });
+}

@@ -1,6 +1,7 @@
 /* eslint-disable */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({ template: 'index.html' });
+
 module.exports = {
   entry: './src/index.js',
   output: {

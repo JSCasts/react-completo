@@ -1,5 +1,5 @@
 .container {
-  background: rgba(255,255,255,0.95);
+  background: rgba(255,255,255,0.9);
   position: absolute;
   font-size: 13px;
   width: 80%;
@@ -15,4 +15,5 @@
 
 .container > p {
   color: #888;
+  word-wrap: break-word;
 }

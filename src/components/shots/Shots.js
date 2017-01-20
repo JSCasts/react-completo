@@ -22,6 +22,7 @@ class Shots extends Component {
         { this.state.shots.map(shot =>
           <Shot
             key={shot.id}
+            id={shot.id}
             image={shot.images.normal}
             date={shot.created_at}
             title={shot.title}

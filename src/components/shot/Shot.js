@@ -20,13 +20,14 @@ class Shot extends Component {
   }
 
   render() {
-    const { image, date, title, description, likesCount, viewsCount } = this.props;
+    const { id, image, date, title, description, likesCount, viewsCount } = this.props;
 
     return (
       <div onMouseEnter={this.toggle} onMouseLeave={this.toggle} className={styles.container}>
         <div className={styles.content}>
           <img alt="Shot" src={image} />
           <ShotDescription
+            id={id}
             showDescription={this.state.showDescription}
             description={description}
             title={title}
@@ -47,6 +48,7 @@ Shot.defaultProps = {
 };
 
 Shot.propTypes = {
+  id: React.PropTypes.number.isRequired,
   image: React.PropTypes.string.isRequired,
   viewsCount: React.PropTypes.number.isRequired,
   likesCount: React.PropTypes.number.isRequired,

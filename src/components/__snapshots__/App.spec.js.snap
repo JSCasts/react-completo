@@ -1,7 +1,7 @@
 exports[`test App 1`] = `
 <div>
   <header
-    className={undefined}>
+    className="header">
     <a
       href="#/"
       onClick={[Function]}
@@ -12,7 +12,7 @@ exports[`test App 1`] = `
     </a>
   </header>
   <main
-    className={undefined}>
+    className="main">
     <div />
   </main>
 </div>

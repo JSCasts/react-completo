@@ -1,0 +1,18 @@
+exports[`test Container 1`] = `
+<div>
+  <header
+    className="header">
+    <a
+      onClick={[Function]}
+      style={Object {}}>
+      <img
+        alt="Logo"
+        src="test-file-stub" />
+    </a>
+  </header>
+  <main
+    className="main">
+    <div />
+  </main>
+</div>
+`;

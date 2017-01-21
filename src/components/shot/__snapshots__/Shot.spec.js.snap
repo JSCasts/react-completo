@@ -1,0 +1,102 @@
+exports[`test Snapshot 1`] = `
+<div
+  className="container"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}>
+  <div
+    className="content">
+    <img
+      alt="Shot"
+      src="image" />
+  </div>
+  <div
+    className="tools">
+    <span
+      className="calendar">
+      2010-10-10
+    </span>
+    <span
+      className="views">
+      17
+    </span>
+    <span
+      className="likes">
+      23
+    </span>
+  </div>
+</div>
+`;
+
+exports[`test Snapshot 2`] = `
+<div
+  className="container"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}>
+  <div
+    className="content">
+    <img
+      alt="Shot"
+      src="image" />
+    <a
+      onClick={[Function]}
+      style={Object {}}>
+      <div
+        className="container">
+        <h4>
+          title
+        </h4>
+        <div
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "description",
+            }
+          } />
+      </div>
+    </a>
+  </div>
+  <div
+    className="tools">
+    <span
+      className="calendar">
+      2010-10-10
+    </span>
+    <span
+      className="views">
+      17
+    </span>
+    <span
+      className="likes">
+      23
+    </span>
+  </div>
+</div>
+`;
+
+exports[`test Snapshot 3`] = `
+<div
+  className="container"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}>
+  <div
+    className="content">
+    <img
+      alt="Shot"
+      src="image" />
+  </div>
+  <div
+    className="tools">
+    <span
+      className="calendar">
+      2010-10-10
+    </span>
+    <span
+      className="views">
+      17
+    </span>
+    <span
+      className="likes">
+      23
+    </span>
+  </div>
+</div>
+`;

@@ -6,7 +6,7 @@ import Container from './Container';
 
 const children = React.createElement('div');
 
-test('Container', () => {
+test('Snapshot', () => {
   const component = renderer.create(
     <Container children={children} />
   );

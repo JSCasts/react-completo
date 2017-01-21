@@ -3,17 +3,23 @@ import React, { Component } from 'react';
 import Shot from '../shot/Shot';
 import getShots from '../../services/shots';
 
+const PAGE = 1;
+const PER_PAGE = 12;
+
 class Shots extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       shots: [],
+      page: PAGE,
+      perPage: PER_PAGE,
     };
   }
 
   componentWillMount() {
-    getShots().then(response => this.setState({ shots: response.data }));
+    getShots(this.state.page, this.state.perPage)
+      .then(response => this.setState({ shots: response.data }));
   }
 
   render() {
@@ -23,7 +29,7 @@ class Shots extends Component {
           <Shot
             key={shot.id}
             id={shot.id}
-            image={shot.images.normal}
+            image={shot.images.teaser}
             date={shot.created_at}
             title={shot.title}
             description={shot.description}

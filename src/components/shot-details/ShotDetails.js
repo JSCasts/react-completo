@@ -41,8 +41,8 @@ class ShotDetails extends Component {
             </Link>
           </div>
           <div className={styles.content}>
-            <img src={shot.images.hidpi} alt="Shot" />
-            <p><InsertHtml text={shot.description} /></p>
+            <img src={shot.images.normal} alt="Shot" />
+            <InsertHtml className={styles.description} text={shot.description} />
           </div>
         </div>
       );

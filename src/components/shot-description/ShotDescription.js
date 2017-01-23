@@ -10,7 +10,9 @@ const ShotDescription = ({ id, showDescription, description, title }) => {
       <Link to={`/shots/${id}`}>
         <div className={styles.container}>
           <h4>{title}</h4>
-          <InsertHtml className={styles.description} maxLength={150} text={description} />
+          <div className={styles.description}>
+            <InsertHtml maxLength={150} text={description} />
+          </div>
         </div>
       </Link>
     );

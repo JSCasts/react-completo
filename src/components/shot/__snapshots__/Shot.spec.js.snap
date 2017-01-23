@@ -46,11 +46,14 @@ exports[`test Snapshot 2`] = `
           title
         </h4>
         <div
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "description",
-            }
-          } />
+          className="description">
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "description",
+              }
+            } />
+        </div>
       </div>
     </a>
   </div>

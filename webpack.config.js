@@ -1,42 +1,19 @@
 /* eslint-disable */
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({ template: 'index.html' });
+var devConfig = require('./webpack.dev.config.js');
+var prodConfig = require('./webpack.prod.config.js');
 
-module.exports = {
-  entry: './src/index.js',
-  output: {
-    filename: 'bundle.js',
-  },
-  eslint: {
-    configFile: './.eslintrc',
-  },
-  module: {
-    preLoaders: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader',
-      },
-    ],
-    loaders: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel',
-      },
-      {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader',
-      },
-      {
-        test: /\.scss$/,
-        loader: 'style!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-      },
-      {
-        test: /.(png|woff(2)?|eot|otf|ttf|svg)(\?[a-z0-9=\.]+)?$/,
-        loader: 'url-loader?limit=100000',
-      },
-    ],
-  },
-  plugins: [HTMLWebpackPluginConfig],
-};
+var config;
+
+switch (process.env.npm_lifecycle_event) {
+  case 'start':
+    config = devConfig;
+    break;
+  case 'build':
+    config = prodConfig;
+    break;
+  default:
+    config = devConfig;
+    break;
+}
+
+module.exports = config;
